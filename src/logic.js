@@ -15,8 +15,10 @@ const createProj = function(){
 
 const addToProj = function(proj,obj){
     proj.push(obj);
-    console.log(proj);
+    
 }
+
+
 
 export { createObj,createProj,addToProj };
 
