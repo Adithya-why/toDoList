@@ -1,10 +1,11 @@
 
 
-const putProj = function(proj){
+const putProj = function(proj,name){
     let maindiv = document.querySelector(".projects");
     let pdiv = document.createElement('div');
     pdiv.classList.add('projediv');
-    pdiv.innerHTML = proj[0].title;
+    pdiv.classList.add(`${name}`);
+    pdiv.innerHTML = name;
     maindiv.appendChild(pdiv);
 
 
@@ -29,10 +30,22 @@ const putProj = function(proj){
 
     detdiv.appendChild(ddiv);
 
-
+    return pdiv.classList[1];
 
 
 }
 
 
-export { putProj };
+const addlis  = function(proj,name){
+    let mdiv = document.querySelector(`.${name}`);
+    mdiv.addEventListener('click',function(){
+        console.log("hi");
+    });
+
+}
+
+
+c
+
+
+export { putProj,addlis };
