@@ -1,3 +1,34 @@
-*{
-    color: red;
+body,html{
+    padding: 0;
+    margin: 0;
 }
+
+
+
+
+
+.projects{
+    background-color: black;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+
+.ma{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 0.5fr 2fr;
+}
+
+.head{
+    text-align: center;
+}
+
+
