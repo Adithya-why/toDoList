@@ -15,7 +15,8 @@ const putProj = function(proj,name){
 
 
 const putDetails = function(proj,name){
-
+    let l = proj.length;
+    for(let i=0;i<l;i++){
     const detdiv = document.querySelector('.jobs');
     let ddiv = document.createElement("div");
     ddiv.classList.add('job');
@@ -43,6 +44,8 @@ const putDetails = function(proj,name){
     count++;
 
     //addlis(pdiv,name);
+    }
+
     
 }
 
