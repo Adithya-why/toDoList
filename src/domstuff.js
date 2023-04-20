@@ -11,12 +11,18 @@ const putProj = function(proj,name){
     pdiv.innerHTML = name;
     maindiv.appendChild(pdiv);
 
+}
+
+
+const putDetails = function(proj,name){
 
     const detdiv = document.querySelector('.jobs');
     let ddiv = document.createElement("div");
     ddiv.classList.add('job');
     ddiv.classList.add(count);
-    count++;
+    console.log(count);
+    
+
     let ddiv1 = document.createElement("div");
     let ddiv2= document.createElement("div");
     let ddiv3 = document.createElement("div");
@@ -34,10 +40,10 @@ const putProj = function(proj,name){
 
 
     detdiv.appendChild(ddiv);
+    count++;
 
-    return pdiv.classList[1];
-
-
+    //addlis(pdiv,name);
+    
 }
 
 
@@ -47,8 +53,12 @@ const addlis  = function(proj,name){
         console.log("hi");
         clr();
         let x = findProj(e.target.classList[2]);
-        putProj(x,name);
+        
+        putDetails(x,name);
+        
     });
+
+
 
 }
 
@@ -61,4 +71,4 @@ const clr = function(){
 
 
 
-export { putProj,addlis };
+export { putProj,putDetails,addlis };
