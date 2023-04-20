@@ -1,10 +1,13 @@
+import { findProj } from "./logic";
 
+let count = 0;
 
 const putProj = function(proj,name){
     let maindiv = document.querySelector(".projects");
     let pdiv = document.createElement('div');
     pdiv.classList.add('projediv');
     pdiv.classList.add(`${name}`);
+    pdiv.classList.add(count);
     pdiv.innerHTML = name;
     maindiv.appendChild(pdiv);
 
@@ -12,6 +15,8 @@ const putProj = function(proj,name){
     const detdiv = document.querySelector('.jobs');
     let ddiv = document.createElement("div");
     ddiv.classList.add('job');
+    ddiv.classList.add(count);
+    count++;
     let ddiv1 = document.createElement("div");
     let ddiv2= document.createElement("div");
     let ddiv3 = document.createElement("div");
@@ -38,14 +43,22 @@ const putProj = function(proj,name){
 
 const addlis  = function(proj,name){
     let mdiv = document.querySelector(`.${name}`);
-    mdiv.addEventListener('click',function(){
+    mdiv.addEventListener('click',function(e){
         console.log("hi");
+        clr();
+        let x = findProj(e.target.classList[2]);
+        putProj(x,name);
     });
 
 }
 
+const clr = function(){
+    
+    const di = document.querySelector('.jobs');
+    di.replaceChildren();
+}
 
-c
+
 
 
 export { putProj,addlis };
