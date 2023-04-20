@@ -29,10 +29,10 @@ const putDetails = function(proj,name){
     let ddiv3 = document.createElement("div");
     let ddiv4 = document.createElement("div");
 
-    ddiv1.innerHTML = proj[0].title;
-    ddiv2.innerHTML = proj[0].details;
-    ddiv3.innerHTML = proj[0].dati;
-    ddiv4.innerHTML = proj[0].priority;
+    ddiv1.innerHTML = proj[i].title;
+    ddiv2.innerHTML = proj[i].details;
+    ddiv3.innerHTML = proj[i].dati;
+    ddiv4.innerHTML = proj[i].priority;
 
     ddiv.appendChild(ddiv1);
     ddiv.appendChild(ddiv2);
@@ -41,10 +41,12 @@ const putDetails = function(proj,name){
 
 
     detdiv.appendChild(ddiv);
-    count++;
+    
 
     //addlis(pdiv,name);
     }
+
+    count++;
 
     
 }
