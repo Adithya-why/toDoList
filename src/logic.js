@@ -1,6 +1,7 @@
 import format from 'date-fns/format'
 
 
+let projObj = {};
 let mlist = [];
 
 
@@ -10,19 +11,20 @@ const createObj = function(title,details,dati,priority){
 }
 
 
-const createProj = function(){
+const createProj = function(name){
     let na =[];
+    mlist.push(name);
+    projObj[name] = [];
     return na;
 }
 
-const addToProj = function(proj,obj){
+const addToProj = function(proj,obj,name){
     proj.push(obj);
-    mlist.push(proj);
-    
+    projObj[name].push(obj);
 }
 
 const findProj = function(cname){
-    let objs = mlist[cname];
+    let objs = projObj[cname];
     return objs;
 }
 

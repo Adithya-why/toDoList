@@ -57,7 +57,7 @@ const addlis  = function(proj,name){
     mdiv.addEventListener('click',function(e){
         console.log("hi");
         clr();
-        let x = findProj(e.target.classList[2]);
+        let x = findProj(name);
         
         putDetails(x,name);
         
