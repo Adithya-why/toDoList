@@ -1,13 +1,13 @@
 import { findProj } from "./logic";
 
-let count = 0;
+//let count = 0;
 
 const putProj = function(proj,name){
     let maindiv = document.querySelector(".projects");
     let pdiv = document.createElement('div');
     pdiv.classList.add('projediv');
     pdiv.classList.add(`${name}`);
-    pdiv.classList.add(count);
+    //pdiv.classList.add(count);
     pdiv.innerHTML = name;
     maindiv.appendChild(pdiv);
 
@@ -20,8 +20,8 @@ const putDetails = function(proj,name){
     const detdiv = document.querySelector('.jobs');
     let ddiv = document.createElement("div");
     ddiv.classList.add('job');
-    ddiv.classList.add(count);
-    console.log(count);
+    //ddiv.classList.add(count);
+    //console.log(count);
     
 
     let ddiv1 = document.createElement("div");
@@ -46,7 +46,7 @@ const putDetails = function(proj,name){
     //addlis(pdiv,name);
     }
 
-    count++;
+    //count++;
 
     
 }

@@ -10,6 +10,8 @@ const start = function(){
     addToProj(defproj,x,"main");
     let y = createObj("job","to not code",'2023-09-09',"high");
     addToProj(defproj,y,"main");
+    let z = createObj("job","to not code",'2023-09-09',"high");
+    addToProj(defproj,z,"main");
     putProj(defproj,"main");
     putDetails(defproj,"main");
     addlis(defproj,"main");

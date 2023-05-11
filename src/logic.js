@@ -25,6 +25,7 @@ const addToProj = function(proj,obj,name){
 
 const findProj = function(cname){
     let objs = projObj[cname];
+    console.log(projObj);
     return objs;
 }
 
