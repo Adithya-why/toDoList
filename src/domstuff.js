@@ -1,4 +1,5 @@
-import { findProj } from "./logic";
+import { findProj,addnewData,currentProj } from "./logic";
+import format from 'date-fns/format';
 
 //let count = 0;
 
@@ -74,6 +75,50 @@ const clr = function(){
 }
 
 
+const addlisbutAdd = function(){
+    const b = document.querySelector(".add");
+    b.addEventListener('click',function(){
+        const f = document.querySelector('form');
+        //f.style.display = "block";
+        f.classList.add("formVis");
+
+    });
+}
 
 
-export { putProj,putDetails,addlis };
+const addlisbutCls = function(){
+    const b = document.querySelector(".close");
+    b.addEventListener('click',function(){
+    let obj = getdata();
+    let l= addnewData(obj);
+    clr();
+    putDetails(l,currentProj);
+    const f = document.querySelector('form');
+    //f.style.display = "block";
+    f.classList.remove("formVis");
+    })
+}
+
+
+const getdata = function(){
+    let a,b,c,d;
+    a = document.querySelector(".n");
+    let title = a.value;
+
+    b = document.querySelector(".d");
+    let details = b.value;
+
+    
+    c = document.querySelector(".da");
+    let dati = c.value;
+    let dat = format(new Date(dati),'yyyy-MM-dd');
+    
+    d = document.querySelector(".p");
+    let priority = d.value;
+    
+    return {title,details,dat,priority};
+}
+
+
+
+export { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls };

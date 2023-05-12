@@ -4,6 +4,9 @@ import format from 'date-fns/format'
 let projObj = {};
 let mlist = [];
 
+let currentProj = "main";
+
+
 
 const createObj = function(title,details,dati,priority){
     let dat = format(new Date(dati),'yyyy-MM-dd');
@@ -26,11 +29,18 @@ const addToProj = function(proj,obj,name){
 const findProj = function(cname){
     let objs = projObj[cname];
     console.log(projObj);
+    currentProj = cname;
     return objs;
+}
+
+const addnewData = function(obj){
+    let temp = [];
+    addToProj(temp,obj,currentProj);
+    return projObj[currentProj];
 }
 
 
 
-export { createObj,createProj,addToProj,findProj };
+export { createObj,createProj,addToProj,findProj,addnewData,currentProj };
 
 

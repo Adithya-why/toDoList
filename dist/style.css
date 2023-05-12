@@ -40,3 +40,24 @@ body,html{
 }
 
 
+form{
+    display: none;
+}
+
+
+.formVis{
+    background-color: orange;
+    display: block;
+    position: absolute;
+    right: 15%;
+    top: 15%;
+}
+
+
+.fclass{
+    display: flex;
+    gap: 1em;
+
+}
+
+
