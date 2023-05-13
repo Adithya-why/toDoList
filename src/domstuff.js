@@ -1,3 +1,4 @@
+import { createProj } from "./logic";
 import { findProj,addnewData,currentProj } from "./logic";
 import format from 'date-fns/format';
 
@@ -78,7 +79,7 @@ const clr = function(){
 const addlisbutAdd = function(){
     const b = document.querySelector(".add");
     b.addEventListener('click',function(){
-        const f = document.querySelector('form');
+        const f = document.querySelector('form.to');
         //f.style.display = "block";
         f.classList.add("formVis");
 
@@ -93,7 +94,7 @@ const addlisbutCls = function(){
     let l= addnewData(obj);
     clr();
     putDetails(l,currentProj);
-    const f = document.querySelector('form');
+    const f = document.querySelector('form.to');
     //f.style.display = "block";
     f.classList.remove("formVis");
     })
@@ -121,4 +122,29 @@ const getdata = function(){
 
 
 
-export { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls };
+const adpr = function(){
+    const b = document.querySelector(".adpr");
+    b.addEventListener('click',function(){
+        const f = document.querySelector('.pr');
+        //f.style.display = "block";
+        f.classList.add("formVis");
+
+    });
+}
+
+const rempr = function(){
+    const btn = document.querySelector('.closepr');
+    btn.addEventListener('click',function(){
+        let nm = document.querySelector('#tnam').value;
+        let temp = createProj(nm);
+        putProj(temp,nm);
+        putDetails(temp,nm);
+        addlis(temp,nm);
+
+        let f = document.querySelector('.pr');
+        f.classList.remove("formVis");
+    });
+}
+
+
+export { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr };

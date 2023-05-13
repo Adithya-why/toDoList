@@ -1,5 +1,5 @@
 import { createObj,createProj,addToProj } from "./logic";
-import { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls} from "./domstuff";
+import { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr} from "./domstuff";
 
 
 
@@ -26,8 +26,8 @@ const start = function(){
     addlisbutAdd();
     addlisbutCls();
 
-
-     
+    adpr();
+    rempr();
     console.log("hahahhahahah");
     
 
