@@ -42,7 +42,15 @@ const addnewData = function(obj){
 
 const delTask= function(na,no){
     console.log(projObj[na]);
+  
+  
     projObj[na].splice(no,1);
+}
+
+
+
+const replaceData = function(ob,na,no){
+    projObj[na][no]=ob;
 }
 
 

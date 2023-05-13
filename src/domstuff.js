@@ -22,6 +22,8 @@ const putDetails = function(proj,name){
     const detdiv = document.querySelector('.jobs');
     let ddiv = document.createElement("div");
     ddiv.classList.add('job');
+    ddiv.classList.add(name);
+    ddiv.classList.add(i);
     //ddiv.classList.add(count);
     //console.log(count);
     
@@ -31,7 +33,7 @@ const putDetails = function(proj,name){
     let ddiv3 = document.createElement("div");
     let ddiv4 = document.createElement("div");
     let btnd = document.createElement("button");
-
+    let btnedit = document.createElement("button");
 
 
     btnd.innerHTML = "Delete";
@@ -46,7 +48,30 @@ const putDetails = function(proj,name){
         clr();
         let x = findProj(name);
         putDetails(x,name);
-    })
+    });
+
+
+
+    btnedit.innerHTML="Edit";
+    btnedit.classList.add(name);
+    btnedit.classList.add(i);
+    btnedit.classList.add("editask");
+
+
+
+
+    btnedit.addEventListener("click",function(e){
+        console.log("jhkd");
+        let projn = e.target.classList[0];
+        let projnum = e.target.classList[1];
+
+        let dd = document.querySelectorAll(`.${projn}.${projnum}`);
+        dd.forEach((d)=>d.contentEditable="true");
+        
+
+    
+        
+    });
 
     ddiv1.innerHTML = proj[i].title;
     ddiv2.innerHTML = proj[i].details;
@@ -58,7 +83,7 @@ const putDetails = function(proj,name){
     ddiv.appendChild(ddiv3);
     ddiv.appendChild(ddiv4);
     ddiv.append(btnd);
-
+    ddiv.append(btnedit);
     detdiv.appendChild(ddiv);
     
 
