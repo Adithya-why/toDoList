@@ -1,5 +1,5 @@
 import { createProj } from "./logic";
-import { findProj,addnewData,currentProj } from "./logic";
+import { findProj,addnewData,currentProj,delTask } from "./logic";
 import format from 'date-fns/format';
 
 //let count = 0;
@@ -30,17 +30,34 @@ const putDetails = function(proj,name){
     let ddiv2= document.createElement("div");
     let ddiv3 = document.createElement("div");
     let ddiv4 = document.createElement("div");
+    let btnd = document.createElement("button");
+
+
+
+    btnd.innerHTML = "Delete";
+    btnd.classList.add(name);
+    btnd.classList.add(i);
+    btnd.classList.add("deltask");
+    btnd.addEventListener('click',function(e){
+        let projn = e.target.classList[0];
+        let projnum = e.target.classList[1];
+
+        delTask(projn,projnum);
+        clr();
+        let x = findProj(name);
+        putDetails(x,name);
+    })
 
     ddiv1.innerHTML = proj[i].title;
     ddiv2.innerHTML = proj[i].details;
     ddiv3.innerHTML = proj[i].dati;
     ddiv4.innerHTML = proj[i].priority;
-
+    
     ddiv.appendChild(ddiv1);
     ddiv.appendChild(ddiv2);
     ddiv.appendChild(ddiv3);
     ddiv.appendChild(ddiv4);
-
+    ddiv.append(btnd);
 
     detdiv.appendChild(ddiv);
     

@@ -40,7 +40,12 @@ const addnewData = function(obj){
 }
 
 
+const delTask= function(na,no){
+    console.log(projObj[na]);
+    projObj[na].splice(no,1);
+}
 
-export { createObj,createProj,addToProj,findProj,addnewData,currentProj };
+
+export { createObj,createProj,addToProj,findProj,addnewData,currentProj,delTask };
 
 
