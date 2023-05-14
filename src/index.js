@@ -28,6 +28,9 @@ const start = function(){
 
     adpr();
     rempr();
+
+    console.log(localStorage.getItem('master'));
+    
     console.log("hahahhahahah");
     
 

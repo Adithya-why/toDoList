@@ -18,12 +18,31 @@ const createProj = function(name){
     let na =[];
     mlist.push(name);
     projObj[name] = [];
+    if(!localStorage.getItem("master")){
+        localStorage.setItem("master",JSON.stringify(projObj));
+    }
+
+
+    else{
+        localStorage.removeItem("master");
+        localStorage.setItem("master",JSON.stringify(projObj));
+    }
     return na;
 }
 
 const addToProj = function(proj,obj,name){
     proj.push(obj);
     projObj[name].push(obj);
+    //localStorage.getItem(name).push(obj);
+    if(!localStorage.getItem("master")){
+        localStorage.setItem("master",JSON.stringify(projObj));
+    }
+
+
+    else{
+        localStorage.removeItem("master");
+        localStorage.setItem("master",JSON.stringify(projObj));
+    }
 }
 
 const findProj = function(cname){
@@ -36,6 +55,8 @@ const findProj = function(cname){
 const addnewData = function(obj){
     let temp = [];
     addToProj(temp,obj,currentProj);
+    localStorage.removeItem("master");
+    localStorage.setItem("master",JSON.stringify(projObj));
     return projObj[currentProj];
 }
 
@@ -43,14 +64,20 @@ const addnewData = function(obj){
 const delTask= function(na,no){
     console.log(projObj[na]);
   
-  
+    
     projObj[na].splice(no,1);
+    localStorage.removeItem("master");
+    localStorage.setItem("master",JSON.stringify(projObj));
+    //localStorage.getItem(na).splice(no,1);
 }
 
 
 
 const replaceData = function(ob,na,no){
     projObj[na][no]=ob;
+    //localStorage.getItem(na)[no] = ob;
+    localStorage.removeItem("master");
+    localStorage.setItem("master",JSON.stringify(projObj));
 }
 
 
