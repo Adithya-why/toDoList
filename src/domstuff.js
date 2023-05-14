@@ -1,5 +1,5 @@
 import { createProj } from "./logic";
-import { findProj,addnewData,currentProj,delTask } from "./logic";
+import { findProj,addnewData,currentProj,delTask,replaceData } from "./logic";
 import format from 'date-fns/format';
 
 //let count = 0;
@@ -86,8 +86,11 @@ const putDetails = function(proj,name){
             let priority = a.value;
 
             let obj = {title,details,dat,priority};
-            console.log(obj);
-
+            
+            replaceData(obj,name,i);
+            clr();
+            let x = findProj(name);
+            putDetails(x,name);
 
 
             
@@ -141,6 +144,48 @@ const clr = function(){
     
     const di = document.querySelector('.jobs');
     di.replaceChildren();
+
+    // Create the div element
+var divElement = document.createElement("div");
+divElement.className = "editt";
+
+// Create the title input element
+var titleInput = document.createElement("input");
+titleInput.type = "text";
+titleInput.placeholder = "Title";
+titleInput.className = "a";
+divElement.appendChild(titleInput);
+
+// Create the description input element
+var descriptionInput = document.createElement("input");
+descriptionInput.type = "text";
+descriptionInput.placeholder = "Description";
+descriptionInput.className = "b";
+divElement.appendChild(descriptionInput);
+
+// Create the date input element
+var dateInput = document.createElement("input");
+dateInput.type = "date";
+dateInput.className = "c";
+divElement.appendChild(dateInput);
+
+// Create the priority input element
+var priorityInput = document.createElement("input");
+priorityInput.type = "text";
+priorityInput.placeholder = "Priority";
+priorityInput.className = "d";
+divElement.appendChild(priorityInput);
+
+// Create the submit button
+var submitButton = document.createElement("button");
+submitButton.innerHTML = "Submit";
+submitButton.className = "edittsub";
+divElement.appendChild(submitButton);
+
+// Add the div element to the DOM
+let x = document.querySelector('.jobs');
+x.appendChild(divElement);
+
 }
 
 

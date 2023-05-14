@@ -54,6 +54,6 @@ const replaceData = function(ob,na,no){
 }
 
 
-export { createObj,createProj,addToProj,findProj,addnewData,currentProj,delTask };
+export { createObj,createProj,addToProj,findProj,addnewData,currentProj,delTask,replaceData };
 
 
