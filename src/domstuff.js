@@ -65,8 +65,34 @@ const putDetails = function(proj,name){
         let projn = e.target.classList[0];
         let projnum = e.target.classList[1];
 
-        let dd = document.querySelectorAll(`.${projn}.${projnum}`);
-        dd.forEach((d)=>d.contentEditable="true");
+        //let dd = document.querySelectorAll(`.job.${projn}.${projnum}`);
+        
+        let x = document.querySelector('.editt');
+        x.classList.toggle('formviss');
+        let b = document.querySelector('.edittsub');
+        b.addEventListener('click',function(e){
+            let a,b,c,d;
+            a = document.querySelector('.a');
+            let title = a.value;
+
+            b = document.querySelector('.b');
+            let details = b.value;
+
+            c = document.querySelector('.c');
+            let dati = c.value;
+            let dat = format(new Date(dati),'yyyy-MM-dd');
+
+            a = document.querySelector('.a');
+            let priority = a.value;
+
+            let obj = {title,details,dat,priority};
+            console.log(obj);
+
+
+
+            
+        })
+
         
 
     
