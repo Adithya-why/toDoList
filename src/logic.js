@@ -18,15 +18,7 @@ const createProj = function(name){
     let na =[];
     mlist.push(name);
     projObj[name] = [];
-    if(!localStorage.getItem("master")){
-        localStorage.setItem("master",JSON.stringify(projObj));
-    }
 
-
-    else{
-        localStorage.removeItem("master");
-        localStorage.setItem("master",JSON.stringify(projObj));
-    }
     return na;
 }
 
