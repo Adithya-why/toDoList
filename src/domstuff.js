@@ -101,7 +101,7 @@ const putDetails = function(proj,name){
 
     ddiv1.innerHTML = proj[i].title;
     ddiv2.innerHTML = proj[i].details;
-    ddiv3.innerHTML = proj[i].dati;
+    ddiv3.innerHTML = proj[i].dat;
     ddiv4.innerHTML = proj[i].priority;
     
     ddiv.appendChild(ddiv1);
