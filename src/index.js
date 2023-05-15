@@ -14,7 +14,7 @@ const start = function(){
 
     let defproj = createProj("main");
 
-    let x = createObj("Welcome to the TODOs","To organize",'2023-09-09',"high");
+    let x = createObj("Title","Description",'2023-09-09',"Priority");
     addToProj(defproj,x,"main");
 
     
