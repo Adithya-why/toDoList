@@ -1,11 +1,11 @@
-import { createObj,createProj,addToProj,store,restoreData,projObj} from "./logic";
+import { createObj,createProj,addToProj,store,restoreData} from "./logic";
 import { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr} from "./domstuff";
 
 
 
 
 const start = function(){
-   // localStorage.clear();
+    //localStorage.clear();
 
     restoreData();
     store();
@@ -34,7 +34,7 @@ const start = function(){
 
     
     
-    console.log(projObj);
+    //console.log(projObj);
     
 
     
