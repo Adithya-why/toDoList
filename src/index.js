@@ -11,8 +11,11 @@ const start = function(){
     store();
 
     let defproj = createProj("main");
-    let x = createObj("job","to code",'2023-09-09',"high");
+
+    let x = createObj("Welcome to the TODOs","To organize",'2023-09-09',"high");
     addToProj(defproj,x,"main");
+
+    
     let y = createObj("job","to not code",'2023-09-09',"high");
     addToProj(defproj,y,"main");
     let z = createObj("job","to not code",'2023-09-09',"high");
