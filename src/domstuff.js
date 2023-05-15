@@ -225,7 +225,7 @@ const getdata = function(){
     a = document.querySelector(".n");
     let title = a.value;
 
-    b = document.querySelector(".d");
+    b = document.querySelector(".dd");
     let details = b.value;
     console.log(details);
 
