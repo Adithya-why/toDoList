@@ -8,6 +8,8 @@ const start = function(){
     //localStorage.clear();
 
     restoreData();
+
+
     store();
 
     let defproj = createProj("main");
