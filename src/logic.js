@@ -18,7 +18,7 @@ const createProj = function(name){
     let na =[];
     mlist.push(name);
     projObj[name] = [];
-
+    localStorage.setItem('mlist',JSON.stringify(mlist));
     return na;
 }
 
@@ -80,7 +80,7 @@ const replaceData = function(ob,na,no){
 const store = function(){
     
         localStorage.setItem("currentProj",currentProj);
-
+        localStorage.setItem("mlist",JSON.stringify(mlist));
     
 }
 
@@ -94,6 +94,15 @@ const restoreData = function(){
         projObj = JSON.parse(localStorage.getItem('master'));
         currentProj = localStorage.getItem("currentProj");
 
+    }
+
+
+    if(!localStorage.getItem('mlist')){
+
+    }
+
+    else{
+        mlist = JSON.parse(localStorage.getItem('mlist'));
     }
 }
 
