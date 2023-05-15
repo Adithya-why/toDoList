@@ -261,4 +261,4 @@ const rempr = function(){
 }
 
 
-export { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr };
+export { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr,clr };

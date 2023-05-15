@@ -1,5 +1,5 @@
 import format from 'date-fns/format'
-import { putDetails,putProj,addlis } from './domstuff';
+import { putDetails,putProj,addlis,clr} from './domstuff';
 
 
 let projObj = {};
@@ -38,15 +38,15 @@ const addToProj = function(proj,obj,name){
     proj.push(obj);
     projObj[name].push(obj);
     //localStorage.getItem(name).push(obj);
-    if(!localStorage.getItem("master")){
+   /* if(!localStorage.getItem("master")){
         localStorage.setItem("master",JSON.stringify(projObj));
-    }
+    }*/
 
 
-    else{
-        localStorage.removeItem("master");
+    
+        //localStorage.removeItem("master");
         localStorage.setItem("master",JSON.stringify(projObj));
-    }
+    
 }
 
 const findProj = function(cname){
@@ -60,8 +60,8 @@ const findProj = function(cname){
 const addnewData = function(obj){
     let temp = [];
     addToProj(temp,obj,currentProj);
-    localStorage.removeItem("master");
-    localStorage.setItem("master",JSON.stringify(projObj));
+    //localStorage.removeItem("master");
+    //localStorage.setItem("master",JSON.stringify(projObj));
     return projObj[currentProj];
 }
 
@@ -120,13 +120,21 @@ const restoreData = function(){
 
 
     for(let i=0;i<mlist.length;i++){
+        if(mlist[i]=="main"){
+            let l = projObj[mlist[i]];
+            clr();
+            putDetails(l,mlist[i]);
+        }
+
+
+        else{
         let objl;
         objl = projObj[mlist[i]];
 
         putProj(objl,mlist[i]);
         putDetails(objl,mlist[i]);
         addlis(objl,mlist[i]);
-        
+        }
     }
 }
 
