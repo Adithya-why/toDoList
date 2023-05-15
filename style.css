@@ -125,7 +125,8 @@ form{
 
 
 .formVis{
-    background-color: orange;
+    background-color: honeydew;
+    color: black;
     display: block;
     position: absolute;
     right: 15%;
