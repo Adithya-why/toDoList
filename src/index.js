@@ -4,6 +4,7 @@ import { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr} from ".
 
 
 
+
 const start = function(){
     //localStorage.clear();
 
