@@ -227,6 +227,7 @@ const getdata = function(){
 
     b = document.querySelector(".d");
     let details = b.value;
+    console.log(details);
 
     
     c = document.querySelector(".da");
@@ -275,11 +276,13 @@ const putmain = function(){
 
 const putOthers = function(p,n){
     for(let i=0;i<n.length;i++){
+        if(n[i]!=="main"){
         let x = findProj(n[i]);
         putProj(x,n[i]);
         putDetails(x,n[i]);
         addlis(x,n[i]);
     }
+}
 }
 
 
