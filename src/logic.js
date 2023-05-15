@@ -41,6 +41,7 @@ const findProj = function(cname){
     let objs = projObj[cname];
     console.log(projObj);
     currentProj = cname;
+    store();
     return objs;
 }
 
@@ -73,6 +74,29 @@ const replaceData = function(ob,na,no){
 }
 
 
-export { createObj,createProj,addToProj,findProj,addnewData,currentProj,delTask,replaceData };
+
+//localStorage
+
+const store = function(){
+    
+        localStorage.setItem("currentProj",currentProj);
+
+    
+}
+
+
+const restoreData = function(){
+    if(!localStorage.getItem('master')){
+        
+    }
+
+    else{
+        projObj = JSON.parse(localStorage.getItem('master'));
+        currentProj = localStorage.getItem("currentProj");
+
+    }
+}
+
+export { createObj,createProj,addToProj,findProj,addnewData,currentProj,delTask,replaceData,store,restoreData};
 
 

@@ -1,11 +1,12 @@
-import { createObj,createProj,addToProj } from "./logic";
+import { createObj,createProj,addToProj,store,restoreData,projObj} from "./logic";
 import { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr} from "./domstuff";
 
 
 
 
 const start = function(){
-
+    restoreData();
+    store();
 
     let defproj = createProj("main");
     let x = createObj("job","to code",'2023-09-09',"high");
@@ -31,7 +32,7 @@ const start = function(){
 
     
     
-    console.log("hahahhahahah");
+    console.log(projObj);
     
 
     
