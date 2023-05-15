@@ -17,8 +17,13 @@ const putProj = function(proj,name){
 
 
 const putDetails = function(proj,name){
-    
-    let l = proj.length;
+    let l;
+    try{
+    l = proj.length;
+    }
+    catch(err){
+        l = 0;
+    }
     for(let i=0;i<l;i++){
     const detdiv = document.querySelector('.jobs');
     let ddiv = document.createElement("div");
@@ -261,4 +266,21 @@ const rempr = function(){
 }
 
 
-export { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr,clr };
+
+const putmain = function(){
+    clr();
+    let x = findProj("main");
+    putDetails(x,"main");
+}
+
+const putOthers = function(p,n){
+    for(let i=0;i<n.length;i++){
+        let x = findProj(n[i]);
+        putProj(x,n[i]);
+        putDetails(x,n[i]);
+        addlis(x,n[i]);
+    }
+}
+
+
+export { putProj,putDetails,addlis,addlisbutAdd,addlisbutCls,adpr,rempr,clr,putmain,putOthers };

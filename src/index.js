@@ -9,7 +9,6 @@ const start = function(){
 
     restoreData();
 
-
     store();
 
     let defproj = createProj("main");

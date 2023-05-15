@@ -1,5 +1,5 @@
 import format from 'date-fns/format'
-import { putDetails,putProj,addlis,clr} from './domstuff';
+import { putDetails,putProj,addlis,clr,putmain,putOthers} from './domstuff';
 
 
 let projObj = {};
@@ -45,7 +45,7 @@ const addToProj = function(proj,obj,name){
 
     
         //localStorage.removeItem("master");
-        localStorage.setItem("master",JSON.stringify(projObj));
+    localStorage.setItem("master",JSON.stringify(projObj));
     
 }
 
@@ -97,7 +97,7 @@ const store = function(){
 }
 
 
-const restoreData = function(){
+/*const restoreData = function(){
     if(!localStorage.getItem('master')){
         
     }
@@ -136,6 +136,23 @@ const restoreData = function(){
         addlis(objl,mlist[i]);
         }
     }
+}*/
+
+
+
+const restoreData = function(){
+    if(localStorage.getItem('master')===null){
+        console.log("nothing");
+    }
+
+    else{
+        projObj = JSON.parse(localStorage.getItem('master'));
+        currentProj = localStorage.getItem('currentProj');
+        mlist = JSON.parse(localStorage.getItem('mlist'));
+    }
+
+    putmain(projObj,mlist);
+    putOthers(projObj,mlist);
 }
 
 export { createObj,createProj,addToProj,findProj,addnewData,currentProj,delTask,replaceData,store,restoreData};
